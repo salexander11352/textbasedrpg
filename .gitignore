@@ -4,6 +4,10 @@
 #ignore thumbnails created by windows
 Thumbs.db
 #Ignore files build by Visual Studio
+*.opensdf
+*.sln
+*.vcxproj
+*.filters
 *.obj
 *.exe
 *.pdb
