@@ -1,4 +1,6 @@
 
+*.o
+
 #ignore thumbnails created by windows
 Thumbs.db
 #Ignore files build by Visual Studio
@@ -22,3 +24,6 @@ Thumbs.db
 *.dll
 *.lib
 *.sbr
+#Ignore files created by g++
+*.ghc
+a.out
