@@ -254,5 +254,11 @@ int main() {
 
 	game.defStats();
 	game.mainMenu();
+	// std::cout<<"Pause test:"<<std::endl;
+	// sys_pause();
+	// std::cout<<"Clear test:"<<std::endl;
+	// sys_pause();
+	// sys_clear();
+	// sys_pause();
 	return(0);
 }

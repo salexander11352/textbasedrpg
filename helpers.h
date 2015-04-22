@@ -6,7 +6,7 @@
 
 void sys_clear() {
 #ifdef _WIN32
-	system("cls");
+	system("cmd /c cls");
 #else // Assume POSIX
 	system("clear");
 #endif
