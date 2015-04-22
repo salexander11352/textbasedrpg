@@ -2,6 +2,8 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
+#include <cstdlib> // For system() prototype with gcc
+#include "helpers.h"
 
 struct stats{
 	int Vit,
@@ -27,7 +29,6 @@ class start{
 public:
 	std::string playerName;
 	int playerClass;
-
 	void saveFile() {
 		std::ofstream save;
 		save.open ("C:\\Programming\\characterCreater\\saves\\Player.txt");
@@ -51,7 +52,7 @@ public:
 							  << "\nPlayer Class: " 
 							  << Adder[game.playerClass].Name 
 							  << std::endl;
-					system("PAUSE");
+					sys_pause();
 
 				}
 				save.close ();
@@ -63,7 +64,7 @@ public:
 		char choice;
 		int num = 0;
 		do{
-		system("CLS");
+		sys_clear();
 		std::cout << "\n" << "\n\t      Adventures of Grogg?"
 				  << "\n\tWelcome to the greatest text-based"
 				  << "\n\t  adventure you have ever played."
@@ -74,7 +75,7 @@ public:
 	
 		std::cout << "  >>> ";
 		std::cin  >> choice;
-		system("CLS");
+		sys_clear();
 
 		switch(choice) {
 			case '1': {
@@ -94,7 +95,7 @@ public:
 			}
 			default:{
 				std::cout << "ERROR that is an incorrect value." << std::endl;
-				system("PAUSE");
+				sys_pause();
 				break;
 			}
 		}
@@ -111,7 +112,7 @@ public:
 		std::getline (std::cin, game.playerName);
 		int num = 0;
 		do{
-		system("CLS");
+		sys_clear();
 		std::cout << "  What type of characrter do you wish to be." << std::endl;
 		std::cout << "    1. Warrior" << std::endl
 				  << "    2. Knight"  << std::endl
@@ -121,7 +122,7 @@ public:
 				  << "    6. Hunter"  << std::endl
 				  << "  >>> ";
 		std::cin >> choice;
-		system("CLS");
+		sys_clear();
 		switch(choice) {
 			case 'w':
 			case '1': {
@@ -130,7 +131,7 @@ public:
 						  << " ,You have choosen the warrior class."
 						  << std::endl;
 				num = 1;
-				system("PAUSE");
+				sys_pause();
 				break;
 			}
 			case 'k':
@@ -140,7 +141,7 @@ public:
 			  			  << " ,You have choosen the knight class."
 						  << std::endl;
 				num = 1;
-				system("PAUSE");
+				sys_pause();
 				break;
 			}
 			case 'r':
@@ -150,7 +151,7 @@ public:
 						  << " ,You have choosen the royalty class."
 						  << std::endl;
 				num = 1;
-				system("PAUSE");
+				sys_pause();
 				break;
 			}
 			case 'm':
@@ -160,7 +161,7 @@ public:
 						  << " ,You have choosen the mage class."
 						  << std::endl;
 				num = 1;
-				system("PAUSE");
+				sys_pause();
 				break;
 			}
 			case 't':
@@ -170,7 +171,7 @@ public:
 						  << " ,You have choosen the theif class."
 						  << std::endl;
 				num = 1;
-				system("PAUSE");
+				sys_pause();
 				break;
 			}
 			case 'h':
@@ -180,12 +181,12 @@ public:
 						  << " ,You have choosen the hunter class."
 						  << std::endl;
 				num = 1;
-				system("PAUSE");
+				sys_pause();
 				break;
 			}
 			default:{
 				std::cout << "ERROR that is an incorrect value." << std::endl;
-				system("PAUSE");
+				sys_pause();
 				break;
 			}
 		}
