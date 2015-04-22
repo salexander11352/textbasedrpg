@@ -5,6 +5,7 @@
 Thumbs.db
 #Ignore files build by Visual Studio
 *.opensdf
+*.sdf
 *.sln
 *.vcxproj
 *.filters
