@@ -1,0 +1,24 @@
+##########################################
+#           TODO: Create These :         #
+##########################################
+   # start_game ........ in progress
+   # menu .............. in progress
+   # skillAlloc ........ in progress
+   # charSelect ........ in progress
+##########################################
+#    Need to be done after charSelect    #
+##########################################
+   # calcHP ............ in progress
+   # attack ............ in progress
+   # battle ............ in progress
+##########################################
+#       Not So Important Right Now       #
+##########################################
+   # spawnPlayer ....... in progress
+   # terrain ........... in progress
+   # change_direction .. in progress
+   # is_collision ...... in progress
+   # moveChar .......... in progress
+##########################################
+# Change in progress to done if finished #
+##########################################
