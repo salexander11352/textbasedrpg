@@ -5,6 +5,14 @@
 #include <cstdlib> // For system() prototype with gcc
 #include "helpers.h"
 
+#ifdef _WIN32
+const std::string SAVEPATH = "C:\\";
+#else
+const std::string SAVEPATH = "/tmp/";
+#endif
+// Later this should correlate to char name:
+const std::string SAVEFILE = SAVEPATH + "player.dat";
+
 struct stats{
 	int Vit,
 		Int,
