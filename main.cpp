@@ -7,12 +7,14 @@
 #include "stats.h"
 
 #ifdef _WIN32
-const std::string SAVEPATH = "C:\\";
+std::string SAVEPATH;
+SHGetSpecialFolderPathA(NULL, SAVEPATH, CSIDL_APPDATA,FALSE );
+SAVEPATH += "Grogg\\";
 #else
-const std::string SAVEPATH = "/tmp/";
+std::string SAVEPATH = "/tmp/";
 #endif
 // Later this should correlate to char name:
-const std::string SAVEFILE = SAVEPATH + "player.dat";
+std::string SAVEFILE = SAVEPATH + "player.dat";
 
 // Warrior = 1
 // Knight = 2
