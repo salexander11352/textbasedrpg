@@ -7,28 +7,36 @@
 #include "stats.h"
 
 #ifdef _WIN32
-std::string SAVEPATH;
-SHGetSpecialFolderPathA(NULL, SAVEPATH, CSIDL_APPDATA,FALSE );
-SAVEPATH += "Grogg\\";
+#include <Windows.h>
+#include <shlwapi.h>
+//#include <shlobj.h>
 #else
-std::string SAVEPATH = "/tmp/";
 #endif
-// Later this should correlate to char name:
-std::string SAVEFILE = SAVEPATH + "player.dat";
-
-// Warrior = 1
-// Knight = 2
-// Royalty = 3
-// Mage = 4
-// Thief = 5
-// Hunter = 6
 
 std::string playerName;
 int playerClass;
 
+char* getSavePath() {
+	char* savePath;
+	char* fullSavePath;
+
+	#ifdef _WIN32
+		savePath = strcat( getenv("APPDATA"), "\\Grogg" );
+		if(!CreateDirectory( savePath, NULL )) {
+			std::cout << "ERROR: Could not create save directory." << std::endl;
+			exit(1);
+		}
+		fullSavePath = strcat( savePath, "\\player.dat" );
+	#else
+		fullSavePath = "/tmp/player.dat";
+	#endif
+
+	return fullSavePath;
+}
+
 void saveFile() {
 	std::ofstream save;
-	save.open (SAVEFILE.c_str());
+	save.open (getSavePath());
 	if (save.is_open()) {
 		save << playerName << "\n" << playerClass;
 	save.close ();
@@ -39,7 +47,7 @@ void saveFile() {
 
 void loadFile(){
 	std::ifstream save;
-	save.open (SAVEFILE.c_str());
+	save.open (getSavePath());
 	if (save.is_open()) {
 	while ( !save.eof() )
 	{
